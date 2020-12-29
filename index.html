@@ -12,6 +12,8 @@
                 integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
                 crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css"/>
+
         <style></style>
     </head>
 
@@ -25,12 +27,35 @@
             </div>
         </section>
 
-        <!-- We need to load axios first! -->
         <script
                 src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
                 integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs="
                 crossorigin="anonymous"
         ></script>
-        <script></script>
+        <script>
+            // This function loads pokemon data from the Pokemon API
+            function fetchSimpsonsJSON() {
+                const pokemonId = 1;
+                const url = `https://simpsons-quotes-api.herokuapp.com/quotes`;
+                axios.get(url)
+                    .then(function(response) {
+                        return response.data; // response.data instead of response.json() with fetch
+                    })
+                    .then(function(simpsons) {
+                        console.log('data decoded from JSON:', simpsons);
+                        // Build a block of HTML
+                        const simpsonsHtml = `
+                                            <p><strong>${simpsons[0].quote}</strong></p>
+                                            <p>${simpsons[0].character}</p>
+                                            <img src="${simpsons[0].image}" />
+                                            `;
+
+                        document.querySelector('#simpsons-quotes').innerHTML = simpsonsHtml;
+                    });
+            }
+
+            fetchSimpsonsJSON();
+
+        </script>
     </body>
 </html>
