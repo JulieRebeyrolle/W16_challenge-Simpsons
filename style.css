@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@700&family=Montserrat:wght@500&display=swap');
+body {
+    background-image: url("https://i.pinimg.com/originals/84/b6/67/84b667de030e22f094f9ea56cb10ba2c.jpg");
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.title {
+    font-family: 'Mali', cursive;
+    text-align: center;
+    font-size: 50px;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 64px;
+}
+
+.Right {
+    flex-direction: row;
+}
+
+.Left {
+    flex-direction: row-reverse;
+}
+
+.container-img {
+    height: 350px;
+    width: 350px;
+    border: 16px solid #ece6e6;
+    border-bottom: 60px solid #ece6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6ccef6;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.direction-Left {
+    transform: rotate(-5deg);
+}
+
+.direction-Right {
+    transform: rotate(5deg);
+}
+
+.container-text {
+    max-width: 500px;
+    display: flex;
+    flex-flow: column;
+}
+
+img {
+    max-height: 250px;
+    max-width: 250px;
+}
+
+.quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18pt;
+}
+
+.author {
+    align-self: end;
+    font-size: 14pt;
+}
+
+.button {
+
+}
